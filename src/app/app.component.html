@@ -1,6 +1,6 @@
 <h1>Todos</h1>
 <div class="container">
-  <app-input></app-input>
+  <app-input (onAddTask)="addTask($event)"></app-input>
   <app-filters></app-filters>
   <router-outlet></router-outlet>
 </div>

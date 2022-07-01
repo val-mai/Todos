@@ -1,1 +1,15 @@
-<p>important works!</p>
+<ul>
+  <li *ngIf="todos.length === 0">
+    {{message}}
+  </li>
+  <li *ngFor="let todo of todos">
+    <label for={{todo.id}}>
+      <input [attr.checked]="todo.completed === true ? 'todo.completed' : null" type="checkbox" (click)="changeStatus(todo)" id={{todo.id}}>
+      <p [ngClass]="{'completed': todo.completed === true}">{{todo.title}}</p>
+    </label>
+    <div>
+      <button class="impBtn" [ngClass]="{'important': todo.important === 'important'}" (click)="starTask(todo)"><fa-icon [icon]="faStar"></fa-icon></button>
+      <button class="delBtn" (click)="deleteTask(todo)"><fa-icon [icon]="faTrash"></fa-icon></button>
+    </div>
+  </li>
+</ul>

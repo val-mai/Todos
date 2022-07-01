@@ -1,1 +1,4 @@
-<p>input works!</p>
+<form #myForm (ngSubmit)="addTask() ; myForm.reset()">
+  <input type="text" name="title" placeholder="Aggiungi task" [(ngModel)]="newTodo.title"/>
+  <button type="submit" class="addBtn">+</button>
+</form>

@@ -1,0 +1,34 @@
+input {
+  width: 100%;
+  padding-left: 20px;
+  border: none;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 1.1rem;
+}
+form {
+  height: 60px;
+  padding: 20px;
+  display: flex;
+}
+button {
+  width: 60px;
+  background-color: #009ffd;
+  color: whitesmoke;
+  font-size: larger;
+  border: 1px solid #ccc;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+input::placeholder {
+  color: #ccc;
+}
+input:focus {
+  outline: none;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #035a8d;
+}
