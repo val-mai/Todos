@@ -1,5 +1,5 @@
 ul {
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
   padding: 5px 10px;
 }
 
@@ -19,8 +19,9 @@ ul li p::first-letter {
 ul li button {
   border: none;
   background-color: transparent;
-  font-size: large;
+  font-size: 14px;
   padding-left: 1em;
+  color: #6b6b6b;
 }
 
 .impBtn :hover {
@@ -33,11 +34,11 @@ ul li button {
   color: #ccc;
 }
 
-.important {
+ul li .important {
   color: #ffa515;
 }
 
-.delBtn :hover {
+ul li .delBtn :hover {
   border: none;
   cursor: pointer;
   font-weight: bold;
@@ -52,18 +53,48 @@ ul li:last-child {
 ul label {
   display: flex;
   align-items: center;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 ul label input {
   margin-right: 25px;
 }
 
-ul label input:checked+p {
+ul label input:checked + p {
   text-decoration: line-through;
   color: #ccc;
 }
 
-.delBtn {
-  font-size: large;
+.clear {
+  text-align: end;
+  padding-right: 25px;
+  padding-bottom: 15px;
+}
+
+.clear .clearBtn {
+  background-color: #f27445;
+  border: none;
+  color: white;
+  padding: 4px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.blink {
+  animation: blinking 1000ms ease-in-out infinite;
+}
+
+@keyframes blinking {
+
+  50%{opacity:0}
+
+}
+
+@media screen and (min-width: 768px) {
+  ul label {
+    font-size: 20px;
+  }
+  ul li button {
+    font-size: large;
+  }
 }

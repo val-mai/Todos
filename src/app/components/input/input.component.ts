@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Todo } from '../../classes/todo';
 import { ITodos } from '../../interfaces/itodos';
 
@@ -8,6 +9,8 @@ import { ITodos } from '../../interfaces/itodos';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+
+  faCirclePlus = faCirclePlus;
 
   constructor() { }
 

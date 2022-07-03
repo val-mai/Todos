@@ -17,14 +17,16 @@ export class ImportantComponent implements OnInit {
   faStar = faStar;
   faTrash = faTrash;
 
-
   todos: Todo[] = [];
+
+  blink:boolean = true;
 
 
   ngOnInit(): void {
     setTimeout(() => {
       this.getTask();
       this.message = 'Niente di importante qui!';
+      this.blink = false;
     },2000);
   }
 
@@ -39,13 +41,16 @@ export class ImportantComponent implements OnInit {
 
   deleteTask(task: ITodos) {
     this.todoService.deleteTask(task);
+    this.getTask();
   }
 
   starTask(task: ITodos) {
     this.todoService.starTask(task);
+    this.getTask();
   }
 
   changeStatus(task: ITodos) {
     this.todoService.changeStatus(task);
+    this.getTask();
   }
 }

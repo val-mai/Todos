@@ -17,6 +17,8 @@ export class CompletedComponent implements OnInit {
   faStar = faStar;
   faTrash = faTrash;
 
+  blink:boolean = true;
+
 
   todos: Todo[] = [];
 
@@ -25,6 +27,7 @@ export class CompletedComponent implements OnInit {
     setTimeout(() => {
       this.getTask();
       this.message = 'Non hai ancora completato nessun task';
+      this.blink = false;
     },2000);
   }
 
@@ -39,13 +42,16 @@ export class CompletedComponent implements OnInit {
 
   deleteTask(task: ITodos) {
     this.todoService.deleteTask(task);
+    this.getTask();
   }
 
   starTask(task: ITodos) {
     this.todoService.starTask(task);
+    this.getTask();
   }
 
   changeStatus(task: ITodos) {
     this.todoService.changeStatus(task);
+    this.getTask();
   }
 }

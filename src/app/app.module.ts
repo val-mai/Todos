@@ -9,6 +9,8 @@ import { ImportantComponent } from './components/important/important.component';
 import { InputComponent } from './components/input/input.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TodosComponent,
     InputComponent,
     FiltersComponent,
+    FooterComponent,
+    HeaderComponent,
   ],
 
   imports: [

@@ -17,6 +17,8 @@ export class TodosComponent implements OnInit {
   faStar = faStar;
   faTrash = faTrash;
 
+  blink:boolean = true;
+
 
   todos: Todo[] = [];
 
@@ -25,15 +27,12 @@ export class TodosComponent implements OnInit {
     setTimeout(() => {
       this.getTask();
       this.message = 'Ooops...non ci sono task!';
+      this.blink = false;
     },2000);
   }
 
   getTask(): void {
     this.todos = this.todoService.getTask();
-  }
-
-  addTask(task: ITodos) {
-    this.todoService.addTask(task);
   }
 
   deleteTask(task: ITodos) {
@@ -46,5 +45,9 @@ export class TodosComponent implements OnInit {
 
   changeStatus(task: ITodos) {
     this.todoService.changeStatus(task);
+  }
+
+  clearAll(){
+    this.todoService.clearTasks();
   }
 }

@@ -1,5 +1,5 @@
 <ul>
-  <li *ngIf="todos.length === 0">
+  <li [ngClass]="{'blink': blink === true}" *ngIf="todos.length === 0">
     {{message}}
   </li>
   <li *ngFor="let todo of todos">
